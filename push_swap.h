@@ -30,6 +30,9 @@ void sort_five(t_stack *a, t_stack *b);
 void radix_sort(t_stack *a, t_stack *b);
 void sort_small(t_stack *a, t_stack *b);
 void radix_sort_chunks(t_stack *a, t_stack *b);
+void index_stack(t_stack *a);
+void push_chunks(t_stack *a, t_stack *b, int chunks, int chunk_size);
+void push_back_sorted(t_stack *a, t_stack *b);
 
 // utilitários
 int max_bits(t_stack *a);
@@ -39,5 +42,7 @@ int duplicates(int *arr, int size);
 long atoll_check(const char *str);
 int is_number(char *str);
 int get_chunk_count(int size);
+int	calc_chunk_size(int size, int chunks);
+
 
 #endif

@@ -59,7 +59,7 @@ int get_chunk_count(int size)
         return 11;  // 11 chunks para mais de 100 elementos
 }
 
-void radix_sort_chunks(t_stack *a, t_stack *b)
+/*void radix_sort_chunks(t_stack *a, t_stack *b)
 {
     int size;
     int *idx;
@@ -78,7 +78,6 @@ void radix_sort_chunks(t_stack *a, t_stack *b)
     idx = index_array(a->arr, size);
     if (!idx)
         return;
-
     i = 0;
     while (i < size)
     {
@@ -147,4 +146,4 @@ void radix_sort_chunks(t_stack *a, t_stack *b)
         }
         pa(a, b);
     }
-}
+}*/

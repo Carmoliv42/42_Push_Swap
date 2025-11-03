@@ -17,13 +17,12 @@ int main(int argc, char **argv)
     b.size = 0;
     a.arr = malloc(sizeof(int) * a.size);
     b.arr = malloc(sizeof(int) * a.size);
-    i = 0;
     if (!a.arr || !b.arr)
     {
         write(2, "malloc error\n", 13);
         exit(1);
     }
-
+    i = 0;
     // preenche stack A
     while (i < a.size)
     {

@@ -3,7 +3,8 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = main.c push.c rotate.c sort.c swap.c radix_sort.c utils.c
+SRC = main.c push.c rotate.c sort.c swap.c radix_sort.c utils.c chunk_utils.c index_utils.c \
+		push_back_utils.c radix_sort_chunks.c
 OBJS = $(SRC:.c=.o)
 
 LIBFT_DIR = ./libft
