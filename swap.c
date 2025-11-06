@@ -2,8 +2,11 @@
 
 void sa(t_stack *a)
 {
-    if (a->size < 2) return;
-    int tmp = a->arr[0];
+    int tmp;
+
+    if (a->size < 2) 
+        return;
+    tmp = a->arr[0];
     a->arr[0] = a->arr[1];
     a->arr[1] = tmp;
     ft_printf("sa\n");
@@ -11,8 +14,10 @@ void sa(t_stack *a)
 
 void sb(t_stack *b)
 {
-    if (b->size < 2) return;
-    int tmp = b->arr[0];
+    int tmp;
+    if (b->size < 2) 
+        return;
+    tmp = b->arr[0];
     b->arr[0] = b->arr[1];
     b->arr[1] = tmp;
     ft_printf("sb\n");

@@ -34,6 +34,8 @@ int duplicates(int *arr, int size)
     return 0;
 }
 
+#include <limits.h>
+
 long atoll_check(const char *str)
 {
     long sign;
@@ -42,7 +44,13 @@ long atoll_check(const char *str)
     sign = 1;
     res = 0;
     if (*str == '-' || *str == '+')
-        sign = (*str++ == '-') ? -1 : 1;
+    {
+        if (*str == '-')
+            sign = -1;
+        else
+            sign = 1;
+        str++;
+    }
     while (*str)
     {
         if (*str < '0' || *str > '9')
