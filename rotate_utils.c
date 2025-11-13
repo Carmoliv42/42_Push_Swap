@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_back_utils.c                                  :+:      :+:    :+:   */
+/*   rotate_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 20:51:16 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 20:51:17 by carmoliv         ###   ########.fr       */
+/*   Created: 2025/11/13 21:10:17 by carmoliv          #+#    #+#             */
+/*   Updated: 2025/11/13 21:10:49 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_back_sorted(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b)
 {
-	int	max_idx;
-	int	r;
-	int	i;
+	ra(a);
+	rb(b);
+	ft_printf("rr\n");
+}
 
-	while (b->size > 0)
-	{
-		max_idx = 0;
-		i = 1;
-		while (i < b->size)
-		{
-			if (b->arr[i] > b->arr[max_idx])
-				max_idx = i;
-			i++;
-		}
-		if (max_idx <= b->size / 2)
-			while (max_idx-- > 0)
-				rb(b);
-		else
-		{
-			r = b->size - max_idx;
-			while (r-- > 0)
-				rrb(b);
-		}
-		pa(a, b);
-	}
+void	rrr(t_stack *a, t_stack *b)
+{
+	rra(a);
+	rrb(b);
+	ft_printf("rrr\n");
 }
