@@ -38,19 +38,19 @@ static void	init_stacks(t_stack *a, t_stack *b, int argc, char **argv)
 	a->arr = malloc(sizeof(int) * a->size);
 	b->arr = malloc(sizeof(int) * a->size);
 	if (!a->arr || !b->arr)
-		error_exit(a, b, "malloc error");
+		error_exit(a, b, "Error");
 	i = 0;
 	while (i < a->size)
 	{
 		if (!is_number(argv[i + 1]))
-			error_exit(a, b, "Error: invalid number");
+			error_exit(a, b, "Error");
 		num = atoll_check(argv[i + 1]);
 		if (num == 2147483648LL)
-			error_exit(a, b, "Error: number out of range");
+			error_exit(a, b, "Error");
 		a->arr[i++] = (int)num;
 	}
 	if (duplicates(a->arr, a->size))
-		error_exit(a, b, "Error: duplicates");
+		error_exit(a, b, "Error");
 }
 
 static void	sort_dispatch(t_stack *a, t_stack *b)
