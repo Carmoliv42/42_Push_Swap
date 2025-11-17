@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:58:59 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 21:02:15 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:52:32 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	*index_array(int *arr, int size)
 	return (idx);
 }
 
-// retorna número de bits do maior índice
 int	max_bits(t_stack *a)
 {
 	int	max;
@@ -61,11 +60,10 @@ int	max_bits(t_stack *a)
 	return (bits);
 }
 
-// Calcula número de chunks baseado no tamanho
 int	get_chunk_count(int size)
 {
 	if (size <= 100)
-		return (5);// 5 chunks para até 100 elementos
+		return (5);
 	else
-		return (11);// 11 chunks para mais de 100 elementos
+		return (11);
 }

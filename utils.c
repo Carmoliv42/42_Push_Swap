@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 21:44:07 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/17 20:05:06 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:53:59 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ long	atoll_check(const char *str)
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
-			return (2147483648LL);// erro
+			return (2147483648LL);
 		res = res * 10 + (*str - '0');
 		if (res * sign > INT_MAX || res * sign < INT_MIN)
-			return (2147483648LL);// erro
+			return (2147483648LL);
 		str++;
 	}
 	return (res * sign);
@@ -88,10 +88,12 @@ int	is_number(char *str)
 	return (1);
 }
 
-int calc_argv(char **argv)
+int	calc_argv(char **argv)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (argv[i])
 		i++;
-	return i;
+	return (i);
 }
