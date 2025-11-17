@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:23:12 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 20:50:45 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:48:56 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ static void	error_exit(t_stack *a, t_stack *b, char *msg)
 	exit(1);
 }
 
-static void	init_stacks(t_stack *a, t_stack *b, int argc, char **argv)
+static void	init_stacks(t_stack *a, t_stack *b, char **argv, int pgr)
 {
 	int		i;
 	long	num;
 
-	a->size = argc - 1;
+	a->size = calc_argv(argv);
+	if (pgr)
+		a->size -= 1;
 	b->size = 0;
 	a->arr = malloc(sizeof(int) * a->size);
 	b->arr = malloc(sizeof(int) * a->size);
@@ -42,9 +44,9 @@ static void	init_stacks(t_stack *a, t_stack *b, int argc, char **argv)
 	i = 0;
 	while (i < a->size)
 	{
-		if (!is_number(argv[i + 1]))
+		if (!is_number(argv[i + pgr]))
 			error_exit(a, b, "Error");
-		num = atoll_check(argv[i + 1]);
+		num = atoll_check(argv[i + pgr]);
 		if (num == 2147483648LL)
 			error_exit(a, b, "Error");
 		a->arr[i++] = (int)num;
@@ -71,16 +73,23 @@ int	main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
+	char	**aux;
 
+	**aux = NULL;
 	if (argc < 2)
 		return (0);
-	init_stacks(&a, &b, argc, argv);
-	if (is_sorted(&a))
+	if (argc == 2)
 	{
-		free_stacks(&a, &b);
-		return (0);
+		aux = ft_split(argv[1], ' ');
+		if (!aux)
+			return (1);
+		init_stacks(&a, &b, aux, 0);
+		free_aux(aux);
 	}
-	sort_dispatch(&a, &b);
+	else
+		init_stacks(&a, &b, argv, 1);
+	if (!is_sorted(&a))
+		sort_dispatch(&a, &b);
 	free_stacks(&a, &b);
 	return (0);
 }

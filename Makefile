@@ -1,7 +1,7 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRC = main.c push.c rotate.c sort.c swap.c radix_sort.c utils.c chunk_utils.c index_utils.c \
 		push_back_utils.c radix_sort_chunks.c rotate_utils.c

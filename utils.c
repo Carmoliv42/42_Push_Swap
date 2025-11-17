@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 21:44:07 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 21:49:21 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/17 20:05:06 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,12 @@ int	is_number(char *str)
 		str++;
 	}
 	return (1);
+}
+
+int calc_argv(char **argv)
+{
+	int i = 0;
+	while (argv[i])
+		i++;
+	return i;
 }

@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:22:14 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 20:23:06 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:45:17 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,18 @@ void	index_stack(t_stack *a)
 		i++;
 	}
 	free(idx);
+}
+void	free_aux(char **aux)
+{
+	int	i;
+
+	if (!aux)
+		return ;
+	i = 0;
+	while (aux[i])
+	{
+		free(aux[i]);
+		i++;
+	}
+	free(aux);
 }

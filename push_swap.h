@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:51:46 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 21:14:09 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:45:13 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ long	atoll_check(const char *str);
 int		is_number(char *str);
 int		get_chunk_count(int size);
 int		calc_chunk_size(int size, int chunks);
+int		calc_argv(char **argv);
+void	free_aux(char **aux);
 
 #endif
