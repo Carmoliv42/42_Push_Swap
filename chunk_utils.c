@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:21:51 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 20:21:54 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:13:41 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,12 @@ void	push_chunks(t_stack *a, t_stack *b, int chunks, int chunk_size)
 		}
 		c++;
 	}
+}
+
+int	get_chunk_count(int size)
+{
+	if (size <= 100)
+		return (5);
+	else
+		return (11);
 }

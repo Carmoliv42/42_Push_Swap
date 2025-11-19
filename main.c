@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:23:12 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/17 21:48:56 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:24:40 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int	main(int argc, char **argv)
 	t_stack	b;
 	char	**aux;
 
-	**aux = NULL;
 	if (argc < 2)
 		return (0);
 	if (argc == 2)

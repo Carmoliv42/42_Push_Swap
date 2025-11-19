@@ -3,7 +3,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = main.c push.c rotate.c sort.c swap.c radix_sort.c utils.c chunk_utils.c index_utils.c \
+SRC = main.c push.c rotate.c sort.c swap.c utils.c chunk_utils.c index_utils.c \
 		push_back_utils.c radix_sort_chunks.c rotate_utils.c
 OBJS = $(SRC:.c=.o)
 
@@ -13,19 +13,15 @@ LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF_DIR = ./ft_printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-# Regra principal
 $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
 
-# Compila libft
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
-# Compila ft_printf
 $(PRINTF):
 	make -C $(PRINTF_DIR)
 
-# Regras usuais
 all: $(NAME)
 
 clean:

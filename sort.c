@@ -6,20 +6,18 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 21:15:30 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/13 21:41:54 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:30:47 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// 2 elementos
 void	sort_two(t_stack *a)
 {
 	if (a->size == 2 && a->arr[0] > a->arr[1])
 		sa(a);
 }
 
-// 3 elementos
 void	sort_three(t_stack *a)
 {
 	if (a->arr[0] < a->arr[1] && a->arr[1] < a->arr[2])
@@ -71,7 +69,6 @@ static void	push_min_to_b(t_stack *a, t_stack *b)
 	pb(a, b);
 }
 
-// 4 ou 5 elementos
 void	sort_five(t_stack *a, t_stack *b)
 {
 	while (a->size > 3)
@@ -81,7 +78,6 @@ void	sort_five(t_stack *a, t_stack *b)
 		pa(a, b);
 }
 
-// 6 a 10 elementos
 void	sort_small(t_stack *a, t_stack *b)
 {
 	while (a->size > 3)
