@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:21:51 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/19 22:13:41 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/22 15:09:49 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,25 @@ int	calc_chunk_size(int size, int chunks)
 
 void	push_chunks(t_stack *a, t_stack *b, int chunks, int chunk_size)
 {
-	int	c;
-	int	min;
-	int	max;
-	int	count;
-	int	total;
+	int c = 0;
+	int min;
+	int max;
+	int	processed;
 
-	c = 0;
 	while (c < chunks)
 	{
 		min = c * chunk_size;
 		max = (c + 1) * chunk_size - 1;
-		if (max >= a->size)
-			max = a->size - 1;
-		count = 0;
-		total = a->size;
-		while (count++ < total)
+
+		int total = a->size;
+		processed = 0;
+		while (processed < total)
 		{
 			if (a->arr[0] >= min && a->arr[0] <= max)
 				pb(a, b);
 			else
 				ra(a);
+			processed++;
 		}
 		c++;
 	}

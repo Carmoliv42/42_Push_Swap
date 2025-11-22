@@ -6,7 +6,7 @@
 /*   By: carmoliv <carmoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 20:23:12 by carmoliv          #+#    #+#             */
-/*   Updated: 2025/11/19 21:24:40 by carmoliv         ###   ########.fr       */
+/*   Updated: 2025/11/20 21:03:03 by carmoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ static void	free_stacks(t_stack *a, t_stack *b)
 		free(b->arr);
 }
 
-static void	error_exit(t_stack *a, t_stack *b, char *msg)
+static void	error_exit(t_stack *a, t_stack *b, char **split, char *msg)
 {
+	if(split)
+		free_aux(split);
 	write(2, msg, ft_strlen(msg));
 	write(2, "\n", 1);
 	free_stacks(a, b);
@@ -40,19 +42,19 @@ static void	init_stacks(t_stack *a, t_stack *b, char **argv, int pgr)
 	a->arr = malloc(sizeof(int) * a->size);
 	b->arr = malloc(sizeof(int) * a->size);
 	if (!a->arr || !b->arr)
-		error_exit(a, b, "Error");
+		error_exit(a, b, argv, "Error");
 	i = 0;
 	while (i < a->size)
 	{
 		if (!is_number(argv[i + pgr]))
-			error_exit(a, b, "Error");
+			error_exit(a, b, argv, "Error");
 		num = atoll_check(argv[i + pgr]);
 		if (num == 2147483648LL)
-			error_exit(a, b, "Error");
+			error_exit(a, b, argv, "Error");
 		a->arr[i++] = (int)num;
 	}
 	if (duplicates(a->arr, a->size))
-		error_exit(a, b, "Error");
+		error_exit(a, b, argv, "Error");
 }
 
 static void	sort_dispatch(t_stack *a, t_stack *b)
